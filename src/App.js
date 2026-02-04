@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `https://newsapi.org/v2/everything?q=${category}&page=${page}&pageSize=${pageSize}&apiKey=bc1358c44b1e4506814bbce989694fc4`
+      `https://newsapi.org/v2/everything?q=${category}&page=${page}&pageSize=${pageSize}&apiKey=759d0f2e077342c184f055c56f0aa43a`
     )
       .then((res) => res.json())
       .then((news) => {
