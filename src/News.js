@@ -1,25 +1,32 @@
-function News(props){
-     
-    return(
-        <div className="news zoom">
-            <div className="news-img">
-                {
-                    props.article.urlToImage!==null?
-                    <img src={props.article.urlToImage}></img>:
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkZBy8k1YnTUpnI_pYTScZBWmVlGY9xg1SdOdqQcWMo9R2YG9iIK1XBUXQV-Xb1Mb0V_k&usqp=CAU"></img>
-                }
-                
-            </div>
-            <h2>{props.article.title}</h2>
-            <p>{props.article.description?.substring(0,100).concat("...")}<a href={props.article.url} target="blank">read more</a></p>
-            
+function News({ article }) {
+  return (
+    <div className="news">
+      <div className="news-img">
+        <img
+          src={
+            article.urlToImage
+              ? article.urlToImage
+              : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkZBy8k1YnTUpnI_pYTScZBWmVlGY9xg1SdOdqQcWMo9R2YG9iIK1XBUXQV-Xb1Mb0V_k&usqp=CAU"
+          }
+          alt="news"
+        />
+      </div>
 
-            <div className="source">
-                <p>Author : {props.article.author}</p>
-                <p>{props.article.source.name}</p>
-            </div>
-        </div>
-    )
+      <h2>{article.title}</h2>
 
+      <p>
+        {article.description?.substring(0, 100)}...
+        <a href={article.url} target="_blank" rel="noreferrer">
+          {" "}Read more →
+        </a>
+      </p>
+
+      <div className="source">
+        <p>✍ {article.author || "Unknown"}</p>
+        <p>📰 {article.source?.name}</p>
+      </div>
+    </div>
+  );
 }
+
 export default News;
