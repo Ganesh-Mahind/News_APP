@@ -12,7 +12,8 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `https://newsapi.org/v2/everything?q=${category}&page=${page}&pageSize=${pageSize}&apiKey=bc1358c44b1e4506814bbce989694fc4`
+      `https://newsapi.org/v2/everything?q=${category}&page=${page}&pageSize=${pageSize}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`
+
     )
       .then((res) => res.json())
       .then((news) => {
