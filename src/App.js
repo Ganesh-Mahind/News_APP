@@ -11,7 +11,9 @@ function App() {
   const pageSize = 8;
 
   useEffect(() => {
-    fetch(`/api/news?q=${category}&page=${page}&pageSize=${pageSize}`)
+    fetch(
+      `https://newsapi.org/v2/everything?q=${category}&page=${page}&pageSize=${pageSize}&apiKey=bc1358c44b1e4506814bbce989694fc4`
+    )
       .then((res) => res.json())
       .then((news) => {
         if (news.status === "ok") {
